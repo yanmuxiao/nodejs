@@ -1,0 +1,172 @@
+﻿
+node.js 是一个允许开发人员使用 JavaScript 语言编写服务器端代码的框架。
+
+
+对应项目的cmd.exe ==> shift+右键（在此处打开命令窗口）
+
+一、node.js
+
+1、node -v  ==>版本
+2、创建第一个应用
+	在我们创建 Node.js 第一个 "Hello, World!" 应用前，让我们先了解下 Node.js 应用是由哪几部分组成的：
+	1)、引入 required 模块：我们可以使用 require 指令来载入 Node.js 模块。
+	2)、创建服务器：服务器可以监听客户端的请求，类似于 Apache 、Nginx 等 HTTP 服务器。
+	3)、接收请求与响应请求 服务器很容易创建，客户端可以使用浏览器或终端发送 HTTP 请求，服务器接收请求后返回响应数据。
+3、Node.js REPL(交互式解释器)
+    进入终端==> node
+    REPL 命令 ==>
+
+    	ctrl + c - 退出当前终端。
+	ctrl + c 按下两次 - 退出 Node REPL。
+	ctrl + d - 退出 Node REPL.
+	向上/向下 键 - 查看输入的历史命令
+	tab 键 - 列出当前命令
+	.help - 列出使用命令
+	.break - 退出多行表达式
+	.clear - 退出多行表达式
+	.save filename - 保存当前的 Node REPL 会话到指定文件
+	.load filename - 载入当前 Node REPL 会话的文件内容。
+
+
+4、Node.js 回调函数
+
+
+5、启动服务。
+	node app.js
+	node start.js
+
+
+
+
+nodejs 
+1、cat  input.txt
+
+
+
+
+
+
+
+
+二、npm ==>是一个node包管理和分发工具，已经成为了非官方的发布node模块（包）的标准。有了npm，可以很快的找到特定服务要使用的包，进行下载、安装以及管理已经安装的包。
+
+/*************************************************************/
+
+	==> 全局安装在C:\Users\xdskg\AppData\Roaming\npm目录下。
+
+
+/*************************************************************/
+
+	1、npm -v 
+
+	2、npm install npm -g ==>全局安装npm或者升级npm
+		1) npm uninstall <model> 
+		2) npm update <model>
+		3) npm search <model>
+
+	3、npm安装模块，如：express
+		==>本地安装： npm install express
+		==>全局安装： npm install express -g
+
+		安装好之后，express 包就放在了工程目录下的 node_modules 目录中，因此在代码中只需要通过 require('express') 的方式就好，无需指定第三方包路径。
+
+		var express = require('express');
+
+	4、查看所有全局安装的模块
+		==> npm ls -g
+
+
+
+
+
+
+
+三、express ==>  是一个基于 Node.js 平台的极简、灵活的 web 应用开发框架，它提供一系	列强大的特性，帮助你创建各种 Web 和移动设备应用。
+
+
+	==>安装express-generator
+	==>npm install -g express-generator
+
+	express版本==> express -V(大写V)
+	express帮助==> express -h(小写)
+
+
+
+	/**（其他系统创建工程的方法，都加$,  $ mkdir helloworld）**/
+
+	
+	1、使用express创建一个工程:
+	   express helloworld ==> 默认使用jade模板引擎
+		express -e helloworld ==> 使用ejs模板引擎
+	
+	2、cd helloworld ==>进入工程
+	3、nmp install ==> 根据package.json安装依赖模块(node_modules)
+
+
+	第2、3步可以合并：cd helloworld && npm install
+
+
+	最好启动该工程（默认端口）：http://localhost:3000/
+
+
+
+
+
+
+
+
+	Node的小基友supervisor　　
+　　	每次修改代码后会自动重启。懒程序员就指望这种省事省力的工具活着了:)
+　　	安装：npm install -g supervisor
+　　	执行：supervisor app.js
+
+
+
+
+	cnpm install npm -g
+
+
+
+
+
+
+
+
+
+node ==> 进入终端
+
+var fs = require('fs');
+
+
+//创建(make==> mk)目录（directory) ==> 目录内建目录
+==> fs.mkdir('test'); ==> fs.mkdir('test/test1');
+
+//删除(remove ==> rm)目录 ==> 删除目录中的目录
+==> fs.rmdir('test'); ==> fs.rmdir('test/test1');
+
+
+//创建文件 ==> fs.writeFile('路径','内容')
+==> 如果该文件已经存在，替换该文件的内容
+
+==> fs.writeFile('input.txt','www.runoob.com');
+==> fs.writeFile('test/input.txt','www.runoob.com');
+
+//删除文件 ==> fs.unlink('路径')
+==> fs.unlink('input.txt');
+==> fs.unlink('test/input.txt');
+
+
+
+npm install rimraf -g
+rimraf node_modules
+
+
+
+
+
+
+
+
+
+
+
